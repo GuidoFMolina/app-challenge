@@ -1,0 +1,21 @@
+<div class="container mt-5 d-flex justify-content-center align-items-center" style="height: 100vh; font-family: 'Roboto', sans-serif;">
+  <div class="border rounded p-4 bg-light" style="max-width: 800px; width: 100%;">
+    <h2 class="text-center">Listado de Tareas</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Fecha de Inicio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tarea of tareas">
+          <td>{{ tarea.nombre }}</td>
+          <td>{{ tarea.descripcion }}</td>
+          <td>{{ tarea.fechaInicio | date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
