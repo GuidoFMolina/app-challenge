@@ -11,12 +11,12 @@ export class TareaService {
 
   constructor(private http: HttpClient) { }
 
-  // Método para crear una tarea
+
   crearTarea(tarea: { nombre: string, descripcion: string, fechaInicio: string }): Observable<any> {
     return this.http.post<any>(this.apiUrlCrear, tarea);
   }
 
-  // Método para obtener la lista de tareas
+ 
   obtenerTareas(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrlListar)
       .pipe(
@@ -31,7 +31,7 @@ export class TareaService {
         }),
         catchError(error => {
           console.error('Error al obtener tareas', error);
-          return of([]); // Retorna un observable de un array vacío en caso de error
+          return of([]); 
         })
       );
   }
